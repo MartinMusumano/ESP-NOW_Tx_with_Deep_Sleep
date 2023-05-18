@@ -15,9 +15,9 @@ typedef struct payload {
 payload myData;  // Instancia de payload utilizada
 RTC_DATA_ATTR int detecciones = 0;  
 
-#define uS_TO_S_FACTOR 1000000ULL /* Factor de Conversion */
-#define TIME_TO_SLEEP 20ULL       /* Tiempo de Sleep (segundos) */
-#define SENSOR_PIN GPIO_NUM_4
+#define uS_TO_S_FACTOR 1000000ULL // Factor de Conversion
+#define TIME_TO_SLEEP 20ULL       // Tiempo de Sleep (segundos)
+#define SENSOR_PIN GPIO_NUM_4     // GPIO utilizado para sumar una deteccion
 #define LED_PIN 2
 
 void setup() 
@@ -56,7 +56,7 @@ void setup()
 
   //----------------- Deep Sleep ----------------------
     esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);  //Habilita despertar por Timer
-    esp_sleep_enable_ext0_wakeup(SENSOR_PIN, HIGH);    //Habilita despertar por GPIO 33
+    esp_sleep_enable_ext0_wakeup(SENSOR_PIN, HIGH);    //Habilita despertar por GPIO
 
     Serial.println("Ingresando a Deep Sleep");
     Serial.flush(); 
