@@ -94,7 +94,7 @@ int Init_ESP_NOW(void)
 
 int SendMessage(void)
 {
-  // En este caso simula valores
+  // Actualiza los valores a enviar
   myData.id = WiFi.macAddress();
   myData.detecciones = detecciones;
 
@@ -102,7 +102,7 @@ int SendMessage(void)
   esp_err_t result = esp_now_send(slaveAddress, (uint8_t *)&myData, sizeof(myData));
   if (result == ESP_OK) {
     Serial.println("Mensaje enviado correctamente");
-    pinMode(LED_PIN, OUTPUT);   //Unicamente para pruebas
+    pinMode(LED_PIN, OUTPUT);   //LED indicador de envío (únicamente para pruebas)
     digitalWrite(LED_PIN, HIGH);
     delay(500);
     return 1;
