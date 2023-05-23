@@ -122,7 +122,7 @@ int Init_ESP_NOW(void)
 
 int SendMessage(void) 
 {
-  // En este caso simula valores
+  // Actualiza valores
   WiFi.macAddress().toCharArray(myData.id, sizeof(myData.id));
   myData.detecciones = detecciones;
 
