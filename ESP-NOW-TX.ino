@@ -26,7 +26,7 @@ RTC_DATA_ATTR unsigned long nro_mensaje = 1;
 #define LED_PIN 2
 
 void setup() {
-  uint8_t sensor_state = digitalRead(GPIO_NUM_4);
+  uint8_t sensor_state = digitalRead(GPIO_NUM_4); //lee rapidamente en caso de wake up
   Serial.begin(115200);
 
   esp_reset_reason_t reset_reason = esp_reset_reason();
