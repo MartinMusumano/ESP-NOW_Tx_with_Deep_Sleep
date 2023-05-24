@@ -13,6 +13,8 @@ Si se da el primer caso, el micro iniciará el WiFi, en modo station, protocolo 
 necesario para utilizar ESP-NOW. En este caso se toma una dirección de broadcast para transmitir.
 Luego enviará un payload que contiene la MAC del dispositivo y el número de detecciones.
 
-Si se da el segundo caso, se incrementará el número de detecciones, almacenado en la Memoria RTC (no se pierde su valor entre resets). Se invierte aquí el nivel que dispara wake-up, para implementar un pseudo disparo por flanco (ascendente).
+Si se da el segundo caso, se incrementará el número de detecciones, almacenado en la Memoria RTC (no se pierde su valor entre resets). Se invierte aquí el nivel que dispara el wake-up, para implementar un pseudo disparo por flanco (ascendente).
 
 Luego de finalizar cualquiera de las dos situaciones, se ingresa inmediatamente a Deep Sleep. Tener en cuenta que el micro demora cerca de 250 ms en despertar.
+
+Para definir el tiempo que debe contar el timer antes de despertar al micro, debe tomarse el tiempo total transcurrido desde que se energizó el sistema (obtenido del RTC), dado que el primero se desactiva vez que hay un reset desde Deep Sleep (por ejemplo en cada detección).
