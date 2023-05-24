@@ -17,4 +17,4 @@ Si se da el segundo caso, se incrementará el número de detecciones, almacenado
 
 Luego de finalizar cualquiera de las dos situaciones, se ingresa inmediatamente a Deep Sleep. Tener en cuenta que el micro demora cerca de 250 ms en despertar.
 
-Para definir el tiempo que debe contar el timer antes de despertar al micro, debe tomarse el tiempo total transcurrido desde que se energizó el sistema (obtenido del RTC), dado que el primero se desactiva vez que hay un reset desde Deep Sleep (por ejemplo en cada detección).
+Para definir el tiempo que debe contar el timer antes de despertar al micro, debe tomarse el tiempo total transcurrido desde que se energizó el sistema (obtenido del RTC), dado que el primero se desactiva cada vez que hay un reset desde Deep Sleep (por ejemplo en cada detección).
