@@ -77,7 +77,7 @@ void setup() {
     Serial.print("Otro tipo de reinicio: ");
   }
 
-  // Configura el timer para despertar y enviar mensaje
+  // Configura el timer para despertar y enviar mensaje: Tiempo para prox. envío - Tiempo transcurrido 
   unsigned long long new_time_to_sleep = TIME_TO_SLEEP * nro_mensaje - rtc.getEpoch()*1000ULL;
   esp_sleep_enable_timer_wakeup(new_time_to_sleep * uS_TO_mS_FACTOR);  //Habilita despertar por Timer
   Serial.println(rtc.getDateTime());
