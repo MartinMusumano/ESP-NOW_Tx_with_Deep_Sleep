@@ -11,7 +11,7 @@ En ambos casos el micro saldrá de Deep Sleep, resetéandose y volviendo a ejecu
 
 Si se da el primer caso, el micro iniciará el WiFi, en modo station, protocolo LR y configurará lo
 necesario para utilizar ESP-NOW. En este caso se toma una dirección de broadcast para transmitir.
-Luego enviará un payload que contiene la MAC del dispositivo y el número de detecciones.
+Luego enviará un payload que contiene la MAC del dispositivo y el número de detecciones. Si el envío es correcto se incrementa el número de mensaje.
 
 Si se da el segundo caso, se incrementará el número de detecciones, almacenado en la Memoria RTC (no se pierde su valor entre resets). Se invierte aquí el nivel que dispara el wake-up, para implementar un pseudo disparo por flanco (ascendente).
 
