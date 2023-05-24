@@ -41,7 +41,7 @@ void setup() {
     if (wakeup_reason == ESP_SLEEP_WAKEUP_EXT0)  // Si se despierta por GPIO
     {
       if (sensor_state == HIGH){
-        esp_sleep_enable_ext0_wakeup(SENSOR_PIN, LOW);
+        esp_sleep_enable_ext0_wakeup(SENSOR_PIN, LOW);  //Invierte nivel para evitar reentradas
         if(rtc.getEpoch() - ultima_deteccion > 4UL){      // Minima cant. de segundos entre detecciones
           ultima_deteccion = rtc.getEpoch();
           detecciones += 1;
